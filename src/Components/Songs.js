@@ -13,6 +13,14 @@ export default function Songs() {
       .then((res) => setSongs(res.data))
       .catch((c) => console.warn("catch", c));
   }, []);
+    
+  const [toggleFav, setToggleFav] = useState(false)
+    
+  const toggleFavorite = (id) => {
+    //   e.preventDefault()
+      console.log(toggleFav, id)
+      setToggleFav(!toggleFav);
+  };
 
   return (
     <div>
@@ -29,7 +37,7 @@ export default function Songs() {
           </thead>
           <tbody>
             {songs.map((song) => {
-              return <Song key={song.id} song={song} />;
+                return <Song key={song.id} song={song} toggleFavorite={toggleFavorite} favorite={song.is_favorite} />;
             })}
           </tbody>
         </table>

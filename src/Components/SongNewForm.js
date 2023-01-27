@@ -24,7 +24,8 @@ export default function SongNewForm() {
     artist: "",
     album: "",
     time: "",
-    is_favorite: false,
+      is_favorite: false,
+    album_id: 0
   });
 
   const handleTextChange = (event) => {
@@ -83,6 +84,14 @@ export default function SongNewForm() {
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={song.is_favorite}
+              />
+               <label htmlFor="album_id">Album Id:</label>
+        <input
+          id="album_id"
+          type="number"
+          name="album_id"
+          value={song.album_id}
+          onChange={handleTextChange}
         />
         <br />
         <input type="submit" />

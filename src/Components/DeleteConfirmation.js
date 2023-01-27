@@ -15,8 +15,8 @@ export default function ConfirmDelete({
     axios
       .delete(`${API}/songs/${id}`)
       .then(() => {
-        navigate(`/songs`);
-        // window.location.reload()
+        // navigate(`/songs`);
+        window.location.reload()
       })
       .catch((e) => console.error(e));
   };
@@ -41,9 +41,7 @@ export default function ConfirmDelete({
         <Modal.Header closeButton>
           <Modal.Title>Delete Song</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          Are you sure you want to delete this song?
-        </Modal.Body>
+        <Modal.Body>Are you sure you want to delete this song?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Back

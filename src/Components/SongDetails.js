@@ -1,4 +1,5 @@
 import axios from "axios";
+// import e from "express";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
@@ -30,7 +31,7 @@ export default function SongDetails() {
   //   .then(() => {
   //     navigate(`/songs`)
   //     },
-  //   (error) => console.error(error)  
+  //   (error) => console.error(error)
   //   ).catch((c) => {
   //     console.warn("catch", c)
   //   })
@@ -39,6 +40,11 @@ export default function SongDetails() {
   // const handleDelete = () => {
   //   deleteSong()
   //  }
+  
+  const goBack = (e) => {
+    e.preventDefault()
+    window.history.back();
+  }
 
   return (
     <article className="Song-Details">
@@ -50,9 +56,9 @@ export default function SongDetails() {
     <p>{time}</p>
     <div className="showNavigation">
       <div>
-        <Link to={`/songs`}>
-          <button>Back</button>
-        </Link>
+        {/* <Link to={`/songs`}> */}
+          <button onClick={goBack}>Back</button>
+        {/* </Link> */}
       </div>
       <div>
         <Link to={`/songs/${id}/edit`}>
