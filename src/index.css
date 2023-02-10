@@ -1,0 +1,29 @@
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.artist {
+  text-decoration: underline;
+}
+
+.albums {
+    text-decoration: none;
+    margin-left: 100px;
+}
+
+.hero {
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.show-buttons {
+    flex-direction: row-reverse;
+    padding-right: 550px;
+    column-gap: 20px;
+  }
+
+  .song-details {
+    padding-top: 50px;
+  }

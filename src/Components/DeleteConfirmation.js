@@ -15,8 +15,8 @@ export default function ConfirmDelete({
     axios
       .delete(`${API}/songs/${id}`)
       .then(() => {
-        // navigate(`/songs`);
-        window.location.reload()
+        navigate(`/songs`);
+        // window.location.reload()
       })
       .catch((e) => console.error(e));
   };

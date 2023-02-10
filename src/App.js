@@ -6,8 +6,9 @@ import New from "./Pages/New";
 import Edit from "./Pages/Edit";
 import AlbumsIndex from "./Pages/AlbumsIndex";
 import AlbumShow from "./Pages/AlbumsShow";
+import AlbumsNew from "./Pages/AlbumsNew";
 
-// import FourOFour from "./Pages/FourOFour";
+import FourOFour from "./Pages/FourOFour";
 
 import NavBar from "./Components/NavBar";
 
@@ -22,11 +23,12 @@ function App() {
             <Route path="/songs" element={<Index />} />
             <Route path="/albums" element={<AlbumsIndex/>} />
             <Route path="/songs/new" element={<New />} />
+            <Route path="/albums/new" element={<AlbumsNew />} />
             <Route path="/songs/:id" element={<Show />} />
             {/* <Route path="/albums/:id/" element={<AlbumShow />} /> */}
-            <Route path="/albums/:id/songs" element={<AlbumShow />} />
+            <Route path="/albums/:albumName/songs" element={<AlbumShow />} />
             <Route path="/songs/:id/edit" element={<Edit />} />
-            {/* <Route path="*" element={<FourOFour/>} /> */}
+            <Route path="*" element={<FourOFour/>} />
           </Routes>
         </main>
      </Router>

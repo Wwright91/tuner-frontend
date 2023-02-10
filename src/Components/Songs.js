@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Table } from "react-bootstrap";
 import Song from "./Song";
 
 const API = process.env.REACT_APP_API_URL;
@@ -24,8 +25,9 @@ export default function Songs() {
 
   return (
     <div>
+      <h1 className="m-5">All Songs</h1>
       <section className="Songs">
-        <table>
+        <Table striped className="m-5">
           <thead>
             <tr>
               <th>Favorite</th>
@@ -40,7 +42,7 @@ export default function Songs() {
                 return <Song key={song.id} song={song} toggleFavorite={toggleFavorite} favorite={song.is_favorite} />;
             })}
           </tbody>
-        </table>
+        </Table>
       </section>
     </div>
   );
