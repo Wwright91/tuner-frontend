@@ -109,9 +109,9 @@ export default function SongEditForm() {
 
               <br />
               <div className="d-flex show-buttons">
-        <button className="btn btn-success">Submit</button>
+        <button className="btn btn-outline-success">Submit</button>
         <Link to={`/songs/${id}`}>
-          <button className="btn btn-warning">Back</button>
+          <button className="btn btn-outline-warning">Back</button>
         </Link>
       </div>
       </form>

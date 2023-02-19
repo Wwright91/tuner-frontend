@@ -98,7 +98,7 @@ export default function SongNewForm() {
           />
         </div>
         <br />
-        <button className="btn btn-success">Submit</button>
+        <button className="btn btn-outline-success">Submit</button>
       </form>
     </div>
   );

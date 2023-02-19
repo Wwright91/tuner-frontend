@@ -16,7 +16,6 @@ export default function ConfirmDelete({
       .delete(`${API}/songs/${id}`)
       .then(() => {
         navigate(`/songs`);
-        // window.location.reload()
       })
       .catch((e) => console.error(e));
   };
@@ -27,7 +26,7 @@ export default function ConfirmDelete({
         variant="white"
         onClick={handleShow}
         type=" button"
-        className="btn btn-danger"
+        className="btn btn-outline-danger"
       >
         Delete
       </Button>

@@ -12,6 +12,7 @@ export default function SongDetails() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const { name, artist, album, time, is_favorite } = song;
+  
   let { id } = useParams();
   let navigate = useNavigate();
 
@@ -31,8 +32,8 @@ export default function SongDetails() {
   };
 
   return (
-    <div className="card-body text-center song-details">
-      <article className="Song-Details">
+    <div className="text-center song-details">
+      <article>
         <h3>
           {is_favorite ? <span>⭐️</span> : null} {name}
         </h3>
@@ -45,7 +46,7 @@ export default function SongDetails() {
         <p>{time}</p>
         <div className="d-flex show-buttons">
           <div>
-            <button className="btn btn-dark" onClick={goBack}>
+            <button className="btn btn-outline-dark" onClick={goBack}>
               Back
             </button>
           </div>

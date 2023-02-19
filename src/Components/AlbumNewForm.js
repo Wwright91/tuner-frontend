@@ -22,6 +22,7 @@ export default function AlbumNewForm() {
   const [album, setAlbum] = useState({
     album_name: "",
     artist_name: "",
+    album_cover: "",
   });
 
   const handleTextChange = (event) => {
@@ -37,6 +38,15 @@ export default function AlbumNewForm() {
       <h3>New Album</h3>
       <br />
       <form onSubmit={handleSubmit}>
+        <div>
+          <img
+            src={album.album_cover}
+            alt={album.album_name}
+            width="100px"
+            height="100px"
+          />
+        </div>
+        <br />
         <div className="form-group">
           <label htmlFor="album_name">Album Name:</label>
           <input
@@ -59,8 +69,18 @@ export default function AlbumNewForm() {
             onChange={handleTextChange}
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="artist_name">Album Cover:</label>
+          <input
+            id="album_cover"
+            type="text"
+            value={album.album_cover}
+            placeholder="Album Cover..."
+            onChange={handleTextChange}
+          />
+        </div>
         <br />
-        <button className="btn btn-success">Submit</button>
+        <button className="btn btn-outline-success">Submit</button>
       </form>
     </div>
   );

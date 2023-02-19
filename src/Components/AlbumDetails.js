@@ -13,7 +13,7 @@ export default function AlbumDetails() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const { album_name, artist_name } = album;
+  const { album_name, artist_name, album_cover } = album;
   let { albumName } = useParams();
   let navigate = useNavigate();
 
@@ -45,11 +45,20 @@ export default function AlbumDetails() {
   //  }
 
   return (
-    <article className="Album-Details">
-          <h3 className="text-center">{album_name}</h3>
-          <p className="text-center">by</p>
-      <h5 className="text-center artist">{artist_name}</h5>
-<br/>
+    <article className="album-details">
+      <div>
+        <img
+          src={album_cover}
+          alt={album_name}
+          width="200px"
+          height="200px"
+          className="album-cover"
+        />
+        <h3 className="text-center">{album_name}</h3>
+        <p className="text-center">by</p>
+        <h5 className="text-center artist">{artist_name}</h5>
+      </div>
+      <br />
       <section>
         <Table striped>
           <thead>
